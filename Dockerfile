@@ -3,6 +3,9 @@ FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/
 
+ARG $PHP_HOST
+ENV PHP_HOST=${PHP_HOST}
+
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash \
